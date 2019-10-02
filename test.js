@@ -3,7 +3,7 @@ const bufferTimeOrCount = require(".");
 it("should buffer by time or count", async () => {
   const output = [];
   for await (const buffer of bufferTimeOrCount(
-    every(100, 50, 100, 1, 1, 1, 250, 500, 10),
+    every(100, 50, 100, 10, 10, 10, 250, 500, 10),
     200,
     3,
   )) {
