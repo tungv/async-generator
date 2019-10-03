@@ -7,7 +7,6 @@ module.exports = async function* merge(...iters) {
 
   while (endCount < iters.length) {
     const { index, next } = await Promise.race(promises);
-    yield next.value;
 
     if (next.done) {
       endCount++;
@@ -15,6 +14,7 @@ module.exports = async function* merge(...iters) {
       continue;
     }
 
+    yield next.value;
     promises[index] = new Promise(res => {
       iters[index].next().then(n => {
         res({
