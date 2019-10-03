@@ -1,15 +1,13 @@
 module.exports = async function* take(iter, limit) {
   let i = 0;
-  while (i++ < limit) {
-    const next = await iter.next();
+  for await (const item of iter) {
+    i++;
+    if (i <= limit) {
+      yield item;
+    }
 
-    yield next.value;
-
-    if (next.done) {
+    if (i === limit) {
       break;
     }
   }
-
-  // require upstream generator to cleanup
-  iter.return();
 };

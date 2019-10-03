@@ -2,7 +2,8 @@ const take = require(".");
 const interval = require("@async-generator/interval");
 
 it("should take n items and stop", async () => {
-  const input = interval(100);
+  const input = interval(10);
+
   const output = take(input, 5);
 
   const actual = [];
@@ -19,7 +20,7 @@ it("should end if generator ends", async () => {
     yield 1;
     yield 2;
     yield 3;
-    return 4;
+    yield 4;
   }
 
   const output = take(input(), 10);
