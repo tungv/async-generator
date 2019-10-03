@@ -1,0 +1,22 @@
+{
+  "name": "@async-generator/map",
+  "version": "1.0.0",
+  "description": "like Array#map but for async generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "async",
+    "generator",
+    "map",
+    "stream"
+  ],
+  "author": "Tung Vu <me@tungv.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@async-generator/interval": "^1.0.0",
+    "@async-generator/take": "^1.0.0",
+    "jest": "^24.9.0"
+  }
+}

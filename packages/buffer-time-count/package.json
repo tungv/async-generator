@@ -1,0 +1,27 @@
+{
+  "name": "buffer-time-count-generator",
+  "version": "1.0.0",
+  "description": "buffer a generator with a timespan or a maximum buffer length",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest test.js"
+  },
+  "engines": {
+    "node": "10+"
+  },
+  "keywords": [
+    "generator",
+    "async",
+    "generator",
+    "buffer",
+    "time",
+    "count"
+  ],
+  "author": "Tung Vu <me@tungv.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@async-generator/interval": "^1.0.0",
+    "@async-generator/take": "^1.0.0",
+    "jest": "^24.9.0"
+  }
+}

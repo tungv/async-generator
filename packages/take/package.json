@@ -1,0 +1,22 @@
+{
+  "name": "@async-generator/take",
+  "version": "1.0.0",
+  "description": "limit an async generator output count",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "async",
+    "generator",
+    "take",
+    "limit",
+    "stream"
+  ],
+  "author": "Tung Vu <me@tungv.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@async-generator/interval": "^1.0.0",
+    "jest": "^24.9.0"
+  }
+}

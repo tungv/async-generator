@@ -1,25 +1,13 @@
 {
-  "name": "buffer-time-count-generator",
-  "version": "1.0.0",
-  "description": "buffer a generator with a timespan or a maximum buffer length",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest test.js"
-  },
-  "engines": {
-    "node": "10+"
-  },
-  "keywords": [
-    "generator",
-    "async",
-    "generator",
-    "buffer",
-    "time",
-    "count"
+  "name": "async-generator",
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
-  "author": "Tung Vu <me@tungv.com>",
-  "license": "ISC",
   "devDependencies": {
-    "jest": "^24.9.0"
+    "lerna": "^3.14.1"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces"
   }
 }
