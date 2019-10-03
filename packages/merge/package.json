@@ -1,0 +1,23 @@
+{
+  "name": "@async-generator/merge",
+  "version": "1.0.0",
+  "description": "merge multiple async generator into one",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "async",
+    "generator",
+    "generator",
+    "merge",
+    "stream"
+  ],
+  "author": "Tung Vu <me@tungv.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@async-generator/interval": "^1.0.0",
+    "@async-generator/take": "^1.0.0",
+    "jest": "^24.9.0"
+  }
+}
