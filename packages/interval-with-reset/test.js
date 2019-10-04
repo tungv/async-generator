@@ -12,13 +12,13 @@ it("should tick every fixed amount of miliseconds", async () => {
 
   const actual = [];
 
-  for await (let i of take(iterator, 5)) {
-    actual.push(i);
+  for await (const value of take(iterator, 5)) {
+    actual.push(value);
   }
 
-  expect(actual[0].time / 10000).toBeCloseTo(0.01, 2);
-  expect(actual[1].time / 10000).toBeCloseTo(0.02, 2);
-  expect(actual[2].time / 10000).toBeCloseTo(0.03, 2);
-  expect(actual[3].time / 10000).toBeCloseTo(0.04, 2);
-  expect(actual[4].time / 10000).toBeCloseTo(0.05, 2);
+  expect(Math.round(actual[0].time / 100)).toBe(1);
+  expect(Math.round(actual[1].time / 100)).toBe(2);
+  expect(Math.round(actual[2].time / 100)).toBe(3);
+  expect(Math.round(actual[3].time / 100)).toBe(4);
+  expect(Math.round(actual[4].time / 100)).toBe(5);
 });
