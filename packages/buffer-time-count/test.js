@@ -7,12 +7,9 @@ it("should buffer by time or count", async () => {
   const buffer = bufferTimeOrCount(input, 200, 3);
 
   const limitedBuffer = take(buffer, 7);
-  let last = Date.now();
 
   for await (const buffer of limitedBuffer) {
     output.push(buffer);
-    console.log(Date.now() - last, buffer);
-    last = Date.now();
   }
 
   expect(output).toEqual([[0, 1], [2, 3, 4], [5], [6], [], [7, 8], []]);
