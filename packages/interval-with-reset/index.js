@@ -1,38 +1,27 @@
-const identity = x => x;
-function defer() {
-  let resolve, reject;
+const subject = require("@async-generator/subject");
 
-  const promise = new Promise((_1, _2) => {
-    resolve = _1;
-    reject = _2;
-  });
-  return {
-    promise,
-    resolve,
-    reject,
-  };
-}
+const identity = x => x;
 
 module.exports = function intervalWithReset(ms, mapFn = identity) {
-  let $q = defer();
-  let timer;
+  const [iter, feed] = subject();
   let counter = 0;
 
-  reset();
+  let timer;
+
+  setTimer();
 
   async function* generate() {
-    while (await $q.promise) {
-      yield mapFn(counter++);
+    for await (const i of iter) {
+      yield mapFn(i);
     }
   }
 
-  function reset() {
+  function setTimer() {
     clearTimeout(timer);
     timer = setTimeout(() => {
-      $q.resolve(true);
-      $q = defer();
-      reset();
+      feed(counter++);
+      setTimer();
     }, ms);
   }
-  return [generate(), reset];
+  return [generate(), setTimer];
 };
