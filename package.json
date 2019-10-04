@@ -5,6 +5,13 @@
     "packages/*"
   ],
   "devDependencies": {
+    "babel-eslint": "9.x",
+    "eslint": "5.x",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-flowtype": "2.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
     "lerna": "^3.14.1"
   },
   "scripts": {
