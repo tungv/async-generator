@@ -1,25 +1,36 @@
-# take outputs from one generator and transform them
+# create an async iterator with a method to feed values into and end it
 
-It's like `Array#map` but for `AsyncGenerator`
+This is one of the most powerful functions, use it sparely.
 
 ## installation
 
 ```
-> npm i @async-generator/map
+> npm i @async-generator/subject
 ```
 
 ## usage
 
 ```js
-const map = require("@async-generator/map");
-const interval = require("@async-generator/interval");
+const subject = require("@async-generator/subject");
 
-const input = interval(100);
-const output = map(input, x => x * x);
+const [iterator, feed, end] = subject();
 
-const actual = [];
+sleep(100).then(async () => {
+  feed(1);
+  await sleep(100);
+  feed(2);
 
-for await (const item of output) {
-  console.log(item); // will log 0, 1, 4, 9, 16, 25, ...
+  await sleep(100);
+  feed(3);
+
+  await sleep(100);
+  feed(4);
+
+  end();
+});
+
+for await (const item of iterator) {
+  console.log(item); // will log 1, 2, 3, 4 and end loop afterward
 }
+
 ```
