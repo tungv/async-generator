@@ -7,12 +7,8 @@
   "devDependencies": {
     "babel-eslint": "9.x",
     "eslint": "5.x",
-    "eslint-config-react-app": "^5.0.2",
-    "eslint-plugin-flowtype": "2.x",
     "eslint-plugin-import": "2.x",
-    "eslint-plugin-jsx-a11y": "6.x",
-    "eslint-plugin-react": "7.x",
-    "eslint-plugin-react-hooks": "^2.1.2",
+    "eslint-plugin-jest": "^22.17.0",
     "husky": "^3.0.8",
     "lerna": "^3.14.1",
     "lint-staged": "^9.4.1",
