@@ -12,9 +12,30 @@
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "7.x",
-    "lerna": "^3.14.1"
+    "husky": "^3.0.8",
+    "lerna": "^3.14.1",
+    "lint-staged": "^9.4.1",
+    "prettier-eslint": "^9.0.0",
+    "prettier-eslint-cli": "^5.0.0"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier-eslint --write",
+      "eslint --max-warnings 0 --fix",
+      "git add"
+    ],
+    "*.{css,json,md,graphql}": [
+      "prettier-eslint --write",
+      "git add"
+    ]
   }
 }
