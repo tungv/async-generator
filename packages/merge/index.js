@@ -1,35 +1,21 @@
+const subject = require("@async-generator/subject");
+
 module.exports = async function* merge(...iters) {
-  const promises = iters.map(async (it, index) => ({
-    index,
-    next: await it.next(),
-  }));
-  let endCount = 0;
+  const [iterator, feed] = subject();
+  let remaining = iters.length;
 
-  while (endCount < iters.length) {
-    const { index, next } = await Promise.race(promises);
-
-    if (next.done) {
-      endCount++;
-      promises[index] = never();
-      continue;
+  iters.forEach(async it => {
+    for await (let item of it) {
+      feed(item);
     }
+    remaining--;
+  });
 
-    yield next.value;
-    promises[index] = new Promise(res => {
-      iters[index].next().then(n => {
-        res({
-          index,
-          next: n,
-        });
-      });
-    });
+  for await (const merged of iterator) {
+    yield merged;
+
+    if (!remaining) {
+      break;
+    }
   }
 };
-
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-async function never() {
-  return new Promise(noop);
-}
-
-function noop() {}

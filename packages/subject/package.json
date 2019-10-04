@@ -1,0 +1,24 @@
+{
+  "name": "@async-generator/subject",
+  "version": "1.0.0",
+  "description": "create an async iterator with functions to feed value into and end it",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "async",
+    "generator",
+    "subject",
+    "feed",
+    "stream"
+  ],
+  "author": "Tung Vu <me@tungv.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -21,6 +21,9 @@
     "@async-generator/take": "^1.0.1",
     "jest": "^24.9.0"
   },
+  "dependencies": {
+    "@async-generator/subject": "^1.0.0"
+  },
   "publishConfig": {
     "access": "public"
   }
