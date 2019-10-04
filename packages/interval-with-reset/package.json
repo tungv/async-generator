@@ -1,6 +1,6 @@
 {
   "name": "@async-generator/interval-with-reset",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "generate integers after an constant amount of time and a function to reset clock",
   "main": "index.js",
   "scripts": {
