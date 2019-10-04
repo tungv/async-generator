@@ -18,12 +18,13 @@
     "prettier-eslint-cli": "^5.0.0"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap --use-workspaces"
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "test": "lerna run test"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn test"
+      "//pre-push": "yarn test"
     }
   },
   "lint-staged": {
