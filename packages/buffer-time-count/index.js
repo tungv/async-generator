@@ -1,11 +1,11 @@
 const merge = require("@async-generator/merge");
-const interval = require("@async-generator/interval");
+const intervalWithReset = require("@async-generator/interval-with-reset");
 
 const TIMEOUT = Symbol("timeout");
 
 module.exports = async function* bufferTimeCount(iter, time, count) {
   const buffer = [];
-  const timeout$ = interval(time, () => TIMEOUT);
+  const [timeout$, reset] = intervalWithReset(time, () => TIMEOUT);
 
   try {
     for await (const itemOrTimeout of merge(timeout$, iter)) {
@@ -13,6 +13,7 @@ module.exports = async function* bufferTimeCount(iter, time, count) {
       if (itemOrTimeout === TIMEOUT) {
         yield [...buffer];
         buffer.length = 0;
+        reset();
         continue;
       }
 
@@ -22,6 +23,7 @@ module.exports = async function* bufferTimeCount(iter, time, count) {
       if (buffer.length >= count) {
         yield [...buffer];
         buffer.length = 0;
+        reset();
       }
     }
   } finally {

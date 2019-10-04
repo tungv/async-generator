@@ -18,23 +18,27 @@ async function* every(...times) {
   let i = 0;
   while (i < times.length) {
     await sleep(times[i]);
-
-    if (i === times.length - 1) {
-      return i;
-    }
-    yield i;
-    i++;
+    yield i++;
   }
 }
 
 // buffer
 const output = [];
 for await (const buffer of bufferTimeOrCount(
-  every(100, 50, 100, 1, 1, 1, 250, 500, 10),
+  every(100, 50, 100, 10, 10, 10, 250, 500, 10),
   200, // wait no longer than 200ms
   3,   // buffer size is no larger than 3
 )) {
-  output.push(buffer);
+  console.log(buffer);
+
+  // this will log
+  // after about 200ms: [0, 1]
+  // after about 70ms:  [2, 3, 4]
+  // after about 130ms: [5]
+  // after about 200ms: [6]
+  // after about 200ms: []
+  // after about 200ms: []
+  // after about 200ms: [7, 8]
 }
 
 // ------------[START]------>[200ms]--->[count=3]-->[200ms]-->[200ms]-->[200ms]-->[END]
