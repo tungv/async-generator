@@ -19,6 +19,10 @@
   ],
   "author": "Tung Vu <me@tungv.com>",
   "license": "ISC",
+  "dependencies": {
+    "@async-generator/interval-with-reset": "^1.0.0",
+    "@async-generator/merge": "^1.0.0"
+  },
   "devDependencies": {
     "@async-generator/interval": "^1.0.0",
     "@async-generator/take": "^1.0.0",

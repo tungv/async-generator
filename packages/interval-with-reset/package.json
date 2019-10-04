@@ -1,0 +1,23 @@
+{
+  "name": "@async-generator/interval-with-reset",
+  "version": "1.0.0",
+  "description": "generate integers after an constant amount of time and a function to reset clock",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "async",
+    "generator",
+    "interval",
+    "stream"
+  ],
+  "author": "Tung Vu <me@tungv.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
