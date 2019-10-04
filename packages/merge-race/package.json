@@ -1,6 +1,6 @@
 {
   "name": "@async-generator/merge-race",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "merge multiple async generator into one and stop with the first one to stop",
   "main": "index.js",
   "scripts": {
