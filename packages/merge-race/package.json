@@ -1,0 +1,27 @@
+{
+  "name": "@async-generator/merge-race",
+  "version": "1.0.1",
+  "description": "merge multiple async generator into one and stop with the first one to stop",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "async",
+    "generator",
+    "generator",
+    "merge",
+    "race",
+    "stream"
+  ],
+  "author": "Tung Vu <me@tungv.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@async-generator/interval": "^1.0.1",
+    "@async-generator/take": "^1.0.1",
+    "jest": "^24.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
