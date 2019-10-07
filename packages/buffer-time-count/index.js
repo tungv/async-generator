@@ -11,9 +11,9 @@ module.exports = async function* bufferTimeCount(iter, time, count) {
     for await (const itemOrTimeout of merge(timeout$, iter)) {
       // timeout branch
       if (itemOrTimeout === TIMEOUT) {
+        reset();
         yield [...buffer];
         buffer.length = 0;
-        reset();
         continue;
       }
 
@@ -21,9 +21,9 @@ module.exports = async function* bufferTimeCount(iter, time, count) {
       buffer.push(itemOrTimeout);
 
       if (buffer.length >= count) {
+        reset();
         yield [...buffer];
         buffer.length = 0;
-        reset();
       }
     }
   } finally {
