@@ -1,6 +1,6 @@
 {
   "name": "@async-generator/merge-race",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "merge multiple async generator into one and stop with the first one to stop",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "jest": "^24.9.0"
   },
   "dependencies": {
-    "@async-generator/subject": "^1.0.0"
+    "@async-generator/subject": "^1.0.1"
   },
   "publishConfig": {
     "access": "public"

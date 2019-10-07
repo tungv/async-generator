@@ -1,6 +1,6 @@
 {
   "name": "@async-generator/subject",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "create an async iterator with functions to feed value into and end it",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "@async-generator/merge",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "merge multiple async generator into one",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "jest": "^24.9.0"
   },
   "dependencies": {
-    "@async-generator/subject": "^1.0.0"
+    "@async-generator/subject": "^1.0.1"
   },
   "publishConfig": {
     "access": "public"

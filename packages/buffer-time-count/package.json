@@ -1,6 +1,6 @@
 {
   "name": "@async-generator/buffer-time-count",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "buffer a generator with a timespan or a maximum buffer length",
   "main": "index.js",
   "scripts": {
@@ -20,8 +20,8 @@
   "author": "Tung Vu <me@tungv.com>",
   "license": "ISC",
   "dependencies": {
-    "@async-generator/interval-with-reset": "^1.0.2",
-    "@async-generator/merge": "^1.0.2"
+    "@async-generator/interval-with-reset": "^1.0.3",
+    "@async-generator/merge": "^1.0.3"
   },
   "devDependencies": {
     "@async-generator/interval": "^1.0.1",
