@@ -21,6 +21,7 @@ it("should feed", async () => {
 
   for await (const item of iterator) {
     actual.push(item);
+    await sleep(200);
   }
 
   expect(actual).toEqual([1, 2, 3, 4]);
