@@ -1,16 +1,20 @@
-module.exports = function createSubject() {
+module.exports = function createSubject(buffer = []) {
   let $q = defer();
   let aborted = false;
 
   async function* generate() {
     while (!aborted) {
-      const value = await $q.promise;
-      yield value;
+      await $q.promise;
+      while (buffer.length) {
+        const value = buffer.shift();
+        yield value;
+      }
     }
   }
 
   function feed(value) {
-    $q.resolve(value);
+    buffer.push(value);
+    $q.resolve();
     $q = defer();
   }
 
