@@ -6,9 +6,6 @@
   "scripts": {
     "test": "jest test.js"
   },
-  "engines": {
-    "node": "10+"
-  },
   "keywords": [
     "generator",
     "async",
