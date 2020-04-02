@@ -1,6 +1,6 @@
 {
   "name": "@async-generator/buffer-time-count",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "buffer a generator with a timespan or a maximum buffer length",
   "main": "index.js",
   "scripts": {
