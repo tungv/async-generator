@@ -1,6 +1,6 @@
 {
   "name": "@async-generator/emitter-on",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ponyfill for EventEmitter.on in node 13+",
   "main": "index.js",
   "scripts": {
