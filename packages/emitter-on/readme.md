@@ -1,6 +1,6 @@
 # returns an <AsyncIterator> that iterates eventName events emitted by the emitter
 
-This is an ponyfill for NodeJS's [`EventEmitter.on`](https://nodejs.org/api/events.html#events_events_on_emitter_eventname)
+This is a ponyfill for NodeJS's [`EventEmitter.on`](https://nodejs.org/api/events.html#events_events_on_emitter_eventname)
 
 ## installation
 
