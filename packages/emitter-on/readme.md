@@ -11,7 +11,7 @@ This is an ponyfill for NodeJS's [`EventEmitter.on`](https://nodejs.org/api/even
 ## usage
 
 ```js
-const on = require("@async-generator/on");
+const on = require("@async-generator/emitter-on");
 
 const emitter = new EventEmitter();
 
