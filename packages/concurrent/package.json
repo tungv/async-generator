@@ -1,6 +1,6 @@
 {
   "name": "@async-generator/concurrent",
-  "version": "1.0.6",
+  "version": "1.0.0",
   "description": "execute tasks concurrently",
   "main": "index.js",
   "scripts": {
@@ -31,6 +31,6 @@
     "directory": "packages/concurrent"
   },
   "dependencies": {
-    "@async-generator/subject": "^1.0.2"
+    "@async-generator/subject": "^1.0.3"
   }
 }

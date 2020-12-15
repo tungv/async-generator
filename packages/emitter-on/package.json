@@ -1,6 +1,6 @@
 {
   "name": "@async-generator/emitter-on",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ponyfill for EventEmitter.on in node 13+",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@async-generator/subject": "^1.0.2"
+    "@async-generator/subject": "^1.0.3"
   },
   "repository": {
     "type": "git",
