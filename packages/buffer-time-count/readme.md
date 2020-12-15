@@ -3,13 +3,13 @@
 ## Installation
 
 ```
-npm i buffer-time-count-generator
+npm i @async-generator/buffer-time-count
 ```
 
 ## Usage
 
 ```js
-const bufferTimeOrCount = require("buffer-time-count-generator");
+const bufferTimeOrCount = require("@async-generator/buffer-time-count");
 
 // example source generator
 // this will generate 0, 1, 2, etc. after each timespan defined in arguments list
