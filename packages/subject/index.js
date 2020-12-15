@@ -1,10 +1,15 @@
+const END = {};
+
 module.exports = function createSubject(buffer = []) {
   let $q = defer();
   let aborted = false;
 
   async function* generate() {
     while (!aborted) {
-      await $q.promise;
+      const signal = await $q.promise;
+      if (signal === END) {
+        return;
+      }
       while (buffer.length) {
         const value = buffer.shift();
         yield value;
@@ -20,6 +25,7 @@ module.exports = function createSubject(buffer = []) {
 
   function terminate() {
     aborted = true;
+    $q.resolve(END);
   }
 
   return [generate(), feed, terminate];
