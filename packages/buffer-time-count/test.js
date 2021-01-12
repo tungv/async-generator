@@ -17,7 +17,7 @@ it("should buffer by time or count", async () => {
 
   // console.log(output);
 
-  expect(output).toEqual([[0, 1], [2, 3, 4], [5], [6], [], [7, 8], []]);
+  expect(output).toEqual([[0, 1], [2, 3, 4], [5], [6], [], [7, 8]]);
 });
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));

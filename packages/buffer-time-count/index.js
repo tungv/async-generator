@@ -1,4 +1,4 @@
-const merge = require("@async-generator/merge");
+const merge = require("@async-generator/merge-race");
 const intervalWithReset = require("@async-generator/interval-with-reset");
 
 const TIMEOUT = Symbol("timeout");
